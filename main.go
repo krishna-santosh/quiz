@@ -38,7 +38,7 @@ func main() {
 	answer_channel := make(chan string)
 
 	fmt.Printf("\nYou have %d seconds to finish the quiz.\n", *timeLimit)
-	
+
 	timer := time.NewTimer(time.Duration(*timeLimit) * time.Second)
 
 	for index, problem := range parseLines(lines) {
@@ -46,7 +46,7 @@ func main() {
 
 		go func() {
 			var answer_input string
-			fmt.Scanf("%s", &answer_input)
+			fmt.Scanln(&answer_input)
 			if *hashed {
 				hashed_input_ans := fmt.Sprintf("%x", sha256.Sum256([]byte(answer_input)))
 				answer_channel <- hashed_input_ans
