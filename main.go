@@ -18,7 +18,7 @@ type problem struct {
 func main() {
 	fmt.Println("Welcome to Quiz game.")
 
-	csvFileName := flag.String("csv", "problems.csv", "a csv file in the format 'question,answer' format.")
+	csvFileName := flag.String("csv", "problems.csv", "a csv file in 'question,answer' format.")
 	timeLimit := flag.Int("time", 10, "time limit in seconds")
 	hashed := flag.Bool("hash", false, "to work with sha256 hashed answers")
 	flag.Parse()
