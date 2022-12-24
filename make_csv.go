@@ -47,6 +47,8 @@ func makeCSV() {
 			log.Fatal(err)
 		}
 	}
+
+	fmt.Printf("\nSuccessfully created %s, and added %d questions to it.\n", fileName, qcount)
 }
 
 func questin_answer_input(question_no int, hash bool) []string {
