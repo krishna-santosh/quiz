@@ -52,8 +52,7 @@ func main() {
 		fmt.Printf("\nQuestion #%d/%d\n%s = ", index+1, len(parseLines((lines))), problem.question)
 
 		go func() {
-			var answer_input string
-			fmt.Scanln(&answer_input)
+			answer_input := getInput()
 			if *hashed {
 				hashed_input_ans := fmt.Sprintf("%x", sha256.Sum256([]byte(answer_input)))
 				answer_channel <- hashed_input_ans
