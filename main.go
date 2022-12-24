@@ -16,7 +16,6 @@ type problem struct {
 }
 
 func main() {
-	fmt.Println("Welcome to Quiz game.")
 
 	csvFileName := flag.String("csv", "problems.csv", "a csv file in 'question,answer' format.")
 	timeLimit := flag.Int("time", 10, "time limit in seconds")
@@ -41,6 +40,8 @@ func main() {
 	if err != nil {
 		exit("Failed to parse the provided CSV file.")
 	}
+
+	fmt.Println("Welcome to Quiz game.")
 
 	var correct_answer_count = 0
 	answer_channel := make(chan string)
