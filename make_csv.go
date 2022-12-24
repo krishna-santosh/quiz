@@ -13,7 +13,7 @@ import (
 
 func makeCSV() {
 	fmt.Println("CSV Generator")
-	fmt.Print("What do you want you CSV file to be called: ")
+	fmt.Print("What do you want your CSV file to be called: ")
 
 	fileName := getInput()
 
