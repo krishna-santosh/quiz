@@ -21,7 +21,15 @@ func main() {
 	csvFileName := flag.String("csv", "problems.csv", "a csv file in 'question,answer' format.")
 	timeLimit := flag.Int("time", 10, "time limit in seconds")
 	hashed := flag.Bool("hash", false, "to work with sha256 hashed answers")
+	makecsv := flag.Bool("make-csv", false, "to create a new csv file for quiz")
 	flag.Parse()
+
+	if flag.NFlag() == 1 {
+		if *makecsv {
+			makeCSV()
+			os.Exit(0)
+		}
+	}
 
 	file, err := os.Open(*csvFileName)
 	if err != nil {
