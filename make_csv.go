@@ -53,6 +53,11 @@ func makeCSV() {
 	}
 
 	fmt.Printf("\nSuccessfully created %s, and added %d questions to it.\n", fileName, qcount)
+	if toHash {
+		fmt.Printf("\nTo play with %s run `quiz -csv %s -hash`\n", fileName, fileName)
+	} else {
+		fmt.Printf("\nTo play with %s run `quiz -csv %s`\n", fileName, fileName)
+	}
 }
 
 func questin_answer_input(question_no int, hash bool) []string {
