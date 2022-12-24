@@ -17,8 +17,8 @@ func makeCSV() {
 
 	fileName := getInput()
 
-	if !strings.HasSuffix(fileName, ".csv"){
-		fileName+=".csv"
+	if !strings.HasSuffix(fileName, ".csv") {
+		fileName += ".csv"
 	}
 
 	file, err := os.Create(strings.TrimSpace(fileName))

@@ -23,11 +23,9 @@ func main() {
 	makecsv := flag.Bool("make-csv", false, "to create a new csv file for quiz")
 	flag.Parse()
 
-	if flag.NFlag() == 1 {
-		if *makecsv {
-			makeCSV()
-			os.Exit(0)
-		}
+	if flag.NFlag() == 1 && *makecsv {
+		makeCSV()
+		os.Exit(0)
 	}
 
 	file, err := os.Open(*csvFileName)
